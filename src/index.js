@@ -1,6 +1,10 @@
-import sum from './sum'
-import './image_viewer'
+const button = document.createElement('button')
+button.innerText = 'click me'
 
-const total = sum(10, 20)
+button.onclick = () => {
+  System.import('./image_viewr').then(module => {
+    module.default
+  })
+}
 
-console.log(total)
+document.body.appendChild(button)
